@@ -1,75 +1,100 @@
+
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
+  background-color:rgb(15, 15, 15);
+  height: 100vh;
+  justify-content: center;
 }
 
 .grid {
   display: flex;
+  height: 100vh;
 }
 
 .grid div {
   flex: 1;
-  height: 200px;
-  background-color: #cccccc;
-  margin: 20px;
+  height: 100vh;
+  background-color: black;
+  margin: 16px;
+  border-radius: 24px;
+  top: 0;
+  bottom: 0;
+  animation-name: change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
 
 .grid .one {
-  background-color: #993126;
+  background-color: rgb(239, 238, 233);
 }
 
 .grid .two {
-  background-color: rgb(209, 113, 105);
+  background-color: rgb(83, 136, 179);
 }
 
 .grid .three {
-  background-color: rgba(28, 133, 153, 0.75);
+  background-color: rgb(153, 105, 168);
 }
 
 .grid .four {
-  background-color: deeppink;
+  background-color: rgba(167, 70, 69);
 }
 
-.parent {
-  width: 80%;
+h1 {
+  color: rgb(15, 15, 15);;
+  animation-name: change;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  font-Family: 'Frank Ruhl Libre', Sans-Serif;
+  font-size: 40px;
+  margin: 32px;
+  padding: 32px;
+}
+
+.top { 
+	background-color:rgb(15, 15, 15);
+	overflow: hidden;
+	position: sticky;
+	top: 0; 
+	left: 0;
+	right: 0;
+  width: 100% 
+  
+  }
+
+.box {
+  display: block;
+  width: 200px;
+  padding: 40px;
   margin: auto;
-  height: 600px;
-  position: relative;
-  border: 1px solid black;
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
 
-.parent .one {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(28, 133, 153, 0.85);
-  width: 300px;
-  height: 300px;
+
+#faxe path{
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
 
-.parent .two {
-  position: absolute;
-  top: 270px;
-  left: 190px;
-  color: rgba(243, 105, 63, 0.4);
-  font-size: 68px;
-}
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(300deg);}
+  100% {transform: rotate(200deg);}
+  }
 
-.parent .three {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(219, 74, 207, 0.5);
-  width: 300px;
-  height: 300px;
-}
-.parent .four {
-  position: absolute;
-  bottom: 100px;
-  left: 150px;
-  background-color: rgba(132, 243, 29, 0.5);
-  width: 300px;
-  height: 300px;
-}
+@keyframes change {
+    25%  {background-color:rgb(239, 238, 233); left:300px; top:0px;}
+    50%  {background-color:rgb(83, 136, 179); left:300px; top:300px;}
+    75%  {background-color:rgb(153, 105, 168);; left:0px; top:300px;}
+    100% {background-color:rgba(167, 70, 69); left:0px; top:0px;}
+  }
